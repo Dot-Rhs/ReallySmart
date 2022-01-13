@@ -1,0 +1,254 @@
+body {
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  background-image: linear-gradient(
+    45deg,
+    #ffffff 13.64%,
+    #000000 13.64%,
+    #000000 50%,
+    #ffffff 50%,
+    #ffffff 63.64%,
+    #000000 63.64%,
+    #000000 100%
+  );
+  background-size: 15.56px 15.56px;
+}
+
+input {
+  border: 1px solid;
+  line-height: 1.5em;
+  margin: 0.5em;
+}
+
+::-webkit-scrollbar {
+  width: 1.65em;
+  background: white;
+  border-left: 1px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+#input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#display-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  word-break: break-all;
+  min-height: 30px;
+}
+
+#display-text {
+  word-break: break-word;
+  max-height: 4.5em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border: 1px solid #000000;
+  overflow-y: auto;
+}
+
+#display-history {
+  width: 21em;
+  padding: 10px;
+  word-break: break-word;
+}
+
+#input-container,
+#display-text-container,
+#display-history {
+  min-width: 12.5em;
+  max-width: 21em;
+  margin: 5px 10px;
+  background: white;
+  box-shadow: 5px 5px 20px black;
+  border: 0.15em solid black;
+}
+
+.text-history {
+  color: transparent;
+  border: 0px solid transparent;
+  height: 0px;
+  margin: 0px;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  background-image: linear-gradient(
+    45deg,
+    #ffffff 13.64%,
+    #000000 13.64%,
+    #000000 50%,
+    #ffffff 50%,
+    #ffffff 63.64%,
+    #000000 63.64%,
+    #000000 100%
+  );
+  background-size: 15.56px 15.56px;
+  text-align: center;
+}
+
+.text-history p {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+.text-history.active {
+  color: inherit;
+  height: 200px;
+  border: 1px solid #000000;
+  overflow-y: scroll;
+  margin: 0.5em 0 0 0;
+}
+
+#history-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1.5em;
+}
+
+.chevron-box {
+  border: 0.1em solid black;
+  box-sizing: border-box;
+  height: 100%;
+  margin-left: 0.5em;
+  padding: 0.15em;
+  background-color: transparent;
+}
+
+.chevron-icon {
+  height: 1.5em;
+  transform: rotate(90deg);
+  transition: 0.2s;
+}
+
+.chevron-icon.active {
+  transform: rotate(-90deg);
+}
+
+#clear-btn {
+  padding: 0.15em 0.8em;
+  height: inherit;
+}
+
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 0.1em solid black;
+  border-radius: 0.12em;
+  padding: 0.35em 1.2em;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  text-decoration: none;
+  transition: all 0.2s;
+  background-color: transparent;
+}
+
+.button:hover {
+  color: white;
+  background-color: black;
+}
+
+.button:active {
+  background-color: white;
+  color: black;
+}
+
+.button:disabled,
+.disabled {
+  filter: opacity(0.5);
+  pointer-events: none;
+}
+
+/* .chevron-icon.disabled {
+    color: lightgray;
+  } */
+
+#background-fun {
+  z-index: -1;
+  font-size: 4em;
+  font-weight: 800;
+  color: white;
+  position: absolute;
+  text-align: center;
+  padding: 0 0.5em;
+  bottom: 0;
+  overflow: hidden;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.bg-text {
+  word-break: break-word;
+  color: inherit;
+}
+
+.bg-text.active {
+  animation-name: bgTextColor;
+  animation-duration: 0.05s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: all;
+}
+
+@keyframes bgTextColor {
+  0% {
+    color: #ffffff;
+    font-style: normal;
+  }
+  50% {
+    font-family: cursive;
+  }
+  100% {
+    color: #000000;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-size: 25.56px 25.56px;
+    font-size: 2.2em;
+  }
+
+  input {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+  }
+
+  .text-history.active {
+    background-size: 25.56px 25.56px;
+    height: 500px;
+  }
+
+  .chevron-box {
+    padding: 0;
+  }
+
+  .chevron-icon {
+    height: auto;
+  }
+}

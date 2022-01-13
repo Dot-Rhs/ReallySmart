@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Terrible Typing</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="input-container">
+      <input
+        type="text"
+        id="text-field"
+        placeholder="Words go here etc."
+        name="text"
+        onkeyup="disableButton()"
+      />
+      <button
+        class="button"
+        id="mash-text"
+        type="button"
+        value="Fuck it"
+        onclick="typeLikeATwat()"
+        disabled
+      >
+        Fuck it
+      </button>
+    </div>
+
+    <div id="display-text-container">
+      <p id="display-text">This is just utterly pointless.</p>
+      <button class="button" id="copy-text" onclick="copyText()">
+        Copy text
+      </button>
+    </div>
+
+    <div id="display-history">
+      <div id="history-title">
+        <h3 style="text-align: center">Past smart conversions</h3>
+        <button class="button" id="clear-btn" onclick="clearHistory()" disabled>
+          clear
+        </button>
+        <button class="chevron-box" onclick="expandHistory()" disabled>
+          <img
+            src="assets/icons/chevron-icon.svg"
+            class="chevron-icon disabled"
+          />
+        </button>
+        <!-- <div
+          class="chevron-box"
+          tabindex="0"
+          onclick="expandHistory()"
+          onkeydown="expandHistory()"
+        >
+          <img
+            src="assets/icons/chevron-icon.svg"
+            class="chevron-icon disabled"
+          />
+        </div> -->
+      </div>
+
+      <div class="text-history"></div>
+    </div>
+    <div id="background-fun">
+      <i class="bg-text">
+        <div style="font-size: 3.4em">&#9787;</div>
+        POINTLESS
+      </i>
+    </div>
+  </body>
+  <script src="index.js" charset="utf-8"></script>
+</html>
