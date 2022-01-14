@@ -165,12 +165,12 @@ input {
   background-color: transparent;
 }
 
-button:hover {
+.button:hover {
   color: white;
   background-color: black;
 }
 
-button:active {
+.button:active {
   background-color: white;
   color: black;
 }
@@ -239,6 +239,10 @@ button:disabled,
     font-size: 1em;
   }
 
+  .button {
+    border: 1px solid black;
+  }
+
   .text-history.active {
     background-size: 25.56px 25.56px;
     height: 500px;
@@ -246,6 +250,7 @@ button:disabled,
 
   .chevron-box {
     padding: 0;
+    border: 1px solid black;
   }
 
   .chevron-icon {
