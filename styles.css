@@ -165,17 +165,17 @@ input {
   background-color: transparent;
 }
 
-.button:hover {
+button:hover {
   color: white;
   background-color: black;
 }
 
-.button:active {
+button:active {
   background-color: white;
   color: black;
 }
 
-.button:disabled,
+button:disabled,
 .disabled {
   filter: opacity(0.5);
   pointer-events: none;
