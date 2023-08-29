@@ -151,6 +151,13 @@ input {
   height: inherit;
 }
 
+#count {
+  position: absolute;
+  mix-blend-mode: difference;
+  color: mediumspringgreen;
+  bottom: -16px;
+}
+
 .button {
   display: inline-block;
   box-sizing: border-box;

@@ -8,9 +8,10 @@
       name="Description"
       content="You too can now type like a fucking idiot and reddit nonces thanks to this handy tool!"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
   </head>
   <body>
+    <p id="count"><%= count %> people had nothing better to do</p>
     <div id="input-container">
       <input
         type="text"
@@ -45,22 +46,8 @@
           clear
         </button>
         <button class="chevron-box" onclick="expandHistory()" disabled>
-          <img
-            src="assets/icons/chevron-icon.svg"
-            class="chevron-icon disabled"
-          />
+          <img class="chevron-icon disabled" src="/icons/chevron-icon.svg" />
         </button>
-        <!-- <div
-          class="chevron-box"
-          tabindex="0"
-          onclick="expandHistory()"
-          onkeydown="expandHistory()"
-        >
-          <img
-            src="assets/icons/chevron-icon.svg"
-            class="chevron-icon disabled"
-          />
-        </div> -->
       </div>
 
       <div class="text-history"></div>
@@ -72,5 +59,9 @@
       </i>
     </div>
   </body>
-  <script src="index.js" charset="utf-8"></script>
+  <script
+    src="js/index.js"
+    charset="utf-8"
+    type="application/javascript"
+  ></script>
 </html>

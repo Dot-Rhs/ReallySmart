@@ -1,5 +1,11 @@
+// const dbConnect = require("./js/db/dbConnect.js");
+
+// import dbConnect from "./js/db/dbConnect.js";
+
 let textHistory = [];
 let clicked = false;
+
+// dbConnect();
 
 if (window.localStorage.getItem("user") !== null) {
   textHistory = JSON.parse(window.localStorage.getItem("user"));
@@ -111,8 +117,8 @@ const disableHistoryBtn = () => {
   const clearBtn = document.getElementById("clear-btn");
   const chevronBox = document.getElementsByClassName("chevron-box")[0];
   const icon = document.getElementsByClassName("chevron-icon")[0];
-  const listLength = document.getElementsByClassName("text-history")[0]
-    .childNodes.length;
+  const listLength =
+    document.getElementsByClassName("text-history")[0].childNodes.length;
 
   if (!listLength) {
     clearBtn.setAttribute("disabled", "disabled");

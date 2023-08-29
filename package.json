@@ -2,13 +2,33 @@
   "name": "type-goodly",
   "version": "1.0.0",
   "description": "A useless tool",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "node server.js"
   },
   "keywords": [
     "1337"
   ],
   "author": "Dezza",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.5",
+    "save": "^2.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dot-Rhs/ReallySmart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dot-Rhs/ReallySmart/issues"
+  },
+  "homepage": "https://github.com/Dot-Rhs/ReallySmart#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
