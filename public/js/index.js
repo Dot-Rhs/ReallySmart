@@ -63,13 +63,45 @@ const updateHistory = (string) => {
   disableHistoryBtn();
 };
 
-const copyText = () => {
-  const cb = navigator.clipboard;
+// const copyText = () => {
+//   const cb = navigator.clipboard;
+//   const target = document.querySelector("#display-text");
+//   cb.writeText(target.innerText)
+//     .then(() => alert("Text copied"))
+//     .catch(() => alert("text not copied"));
+// };
+
+async function copyText() {
   const target = document.querySelector("#display-text");
-  cb.writeText(target.innerText)
-    .then(() => alert("Text copied"))
-    .catch(() => alert("text not copied"));
-};
+  if (typeof navigator.clipboard == "undefined") {
+    console.log("navigator.clipboard");
+    var textArea = document.createElement("textarea");
+    textArea.value = target.innerText;
+    textArea.style.position = "fixed"; //avoid scrolling to bottom
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+      var successful = document.execCommand("copy");
+      var msg = successful ? "successful" : "unsuccessful";
+      console.info(msg);
+    } catch (err) {
+      console.warning("Was not possible to copy te text: ", err);
+    }
+
+    document.body.removeChild(textArea);
+    return;
+  }
+  navigator.clipboard.writeText(target.innerText).then(
+    function () {
+      console.info(`successful!`);
+    },
+    function (err) {
+      console.warning("unsuccessful!", err);
+    },
+  );
+}
 
 const displayHistory = () => {
   const target = document.querySelector(".text-history");
