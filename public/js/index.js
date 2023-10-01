@@ -161,6 +161,10 @@ const disableHistoryBtn = () => {
   }
 };
 
+const goodBye = () => {
+  location.replace("http://www.exitmundi.nl");
+};
+
 if (textHistory.length) {
   displayHistory();
   disableHistoryBtn();
