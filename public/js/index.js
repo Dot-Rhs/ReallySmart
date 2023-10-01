@@ -66,7 +66,9 @@ const updateHistory = (string) => {
 const copyText = () => {
   const cb = navigator.clipboard;
   const target = document.querySelector("#display-text");
-  cb.writeText(target.innerText).then(() => console.log("Text copied"));
+  cb.writeText(target.innerText)
+    .then(() => alert("Text copied"))
+    .catch(() => alert("text not copied"));
 };
 
 const displayHistory = () => {
