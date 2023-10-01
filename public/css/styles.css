@@ -261,6 +261,17 @@ button:disabled,
 
   .chevron-icon {
     height: auto;
+    padding: 10px;
+  }
+
+  #clear-btn {
+    padding: 0em 0.8em;
+    height: inherit;
+  }
+
+  #history-title {
+    height: 2em;
+
   }
 
   #input-container,

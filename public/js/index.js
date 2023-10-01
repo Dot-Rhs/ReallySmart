@@ -137,10 +137,11 @@ const expandHistory = () => {
   container.classList.toggle("active");
 };
 
-const disableButton = () => {
+const disableButton = (e) => {
   let button = document.getElementById("mash-text");
+  console.log(document.getElementById("text-field").value);
 
-  if (document.getElementById("text-field").value === "") {
+  if (!document.getElementById("text-field").value.trim().length) {
     button.setAttribute("disabled", "disabled");
   } else {
     button.removeAttribute("disabled");

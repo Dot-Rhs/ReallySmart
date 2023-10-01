@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -15,7 +15,7 @@
     <%= count %> people had nothing better to do
   </p>
   <div id="input-container">
-    <input type="text" id="text-field" placeholder="Words go here etc." name="text" onkeyup="disableButton()" />
+    <input type="text" id="text-field" placeholder="Words go here etc." name="text" oninput="disableButton()" />
     <button class="button" id="mash-text" type="button" value="Fuck it" onclick="typeLikeATwat()" disabled>
       Fuck it
     </button>
@@ -34,8 +34,8 @@
       <button class="button" id="clear-btn" onclick="clearHistory()" disabled>
         clear
       </button>
-      <button class="chevron-box" onclick="expandHistory()" disabled>
-        <img class="chevron-icon disabled" src="/icons/chevron-icon.svg" />
+      <button aria-label="Expand/Collapse history" class="chevron-box" onclick="expandHistory()" disabled>
+        <img class="chevron-icon disabled" src="/icons/chevron-icon.svg" alt="toggle history chevron" />
       </button>
     </div>
 
