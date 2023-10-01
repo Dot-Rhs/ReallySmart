@@ -1,15 +1,15 @@
-// const dbConnect = require("./js/db/dbConnect.js");
-
-// import dbConnect from "./js/db/dbConnect.js";
-
 let textHistory = [];
 let clicked = false;
 
-// dbConnect();
+const pressedOk = () => {
+  document.getElementsByClassName("modal")[0].classList.add("hidden");
+  document.getElementsByClassName("overlay")[0].classList.add("hidden");
 
-if (window.localStorage.getItem("user") !== null) {
-  textHistory = JSON.parse(window.localStorage.getItem("user"));
-}
+  window.localStorage.setItem(
+    "user",
+    JSON.stringify({ entries: textHistory, pressedOk: true }),
+  );
+};
 
 const typeLikeATwat = () => {
   const userString = document.getElementById("text-field").value;
@@ -37,7 +37,10 @@ const typeLikeATwat = () => {
   updateDisplayText(newStr);
   textHistory.unshift(newStr);
 
-  window.localStorage.setItem("user", JSON.stringify(textHistory));
+  window.localStorage.setItem(
+    "user",
+    JSON.stringify({ entries: textHistory, pressedOk: true }),
+  );
 };
 
 const updateDisplayText = (string) => {
@@ -62,14 +65,6 @@ const updateHistory = (string) => {
 
   disableHistoryBtn();
 };
-
-// const copyText = () => {
-//   const cb = navigator.clipboard;
-//   const target = document.querySelector("#display-text");
-//   cb.writeText(target.innerText)
-//     .then(() => alert("Text copied"))
-//     .catch(() => alert("text not copied"));
-// };
 
 async function copyText() {
   const target = document.querySelector("#display-text");
@@ -175,4 +170,17 @@ window.onload = (e) => {
   document.getElementById("text-field").addEventListener("keyup", (e) => {
     if (e.key === "Enter") typeLikeATwat();
   });
+
+  if (window.localStorage.getItem("user") !== null) {
+    const { entries, pressedOk: yes } = JSON.parse(
+      window.localStorage.getItem("user"),
+    );
+
+    textHistory = entries;
+
+    return;
+  }
+
+  document.getElementsByClassName("modal")[0].classList.remove("hidden");
+  document.getElementsByClassName("overlay")[0].classList.remove("hidden");
 };
