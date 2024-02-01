@@ -162,7 +162,7 @@ const disableHistoryBtn = () => {
 };
 
 const goodBye = () => {
-  location.replace("http://www.exitmundi.nl");
+  location.replace("https://www.youtube.com/watch?v=O6VbKCoe8aQ");
 };
 
 if (textHistory.length) {
