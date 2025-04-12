@@ -1,67 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Type Like A Tech Enthusiast On The Internet</title>
+    <meta
+      name="description"
+      content="You too can now type like a fucking idiot and blend in on Reddit thanks to this handy tool! Randomly capitalise your way to success and flex your cheeto dust fingers!"
+    />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Type Like A Cunt On The Internet</title>
-  <meta name="description"
-    content="You too can now type like a fucking idiot and blend in on Reddit thanks to this handy tool! Randomly capitalise your way to success and flex your cheeto dust fingers!" />
-  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-</head>
-
-<body>
-  <p id="count">
-    <%= count %> people had nothing better to do
-  </p>
-  <div id="input-container">
-    <input type="text" id="text-field" placeholder="Words go here etc." name="text" oninput="disableButton()" />
-    <button class="button" id="mash-text" type="button" value="Fuck it" onclick="typeLikeATwat()" disabled>
-      Fuck it
-    </button>
-  </div>
-
-  <div id="display-text-container">
-    <p id="display-text">This is just utterly pointless.</p>
-    <button class="button" id="copy-text" onclick="copyText()">
-      Copy text
-    </button>
-  </div>
-
-  <div id="display-history">
-    <div id="history-title">
-      <h3 style="text-align: center">Past smart conversions</h3>
-      <button class="button" id="clear-btn" onclick="clearHistory()" disabled>
-        clear
-      </button>
-      <button aria-label="Expand/Collapse history" class="chevron-box" onclick="expandHistory()" disabled>
-        <img class="chevron-icon disabled" src="/icons/chevron-icon.svg" alt="toggle history chevron" />
+  <body>
+    <p id="count"><%= count %> people had nothing better to do</p>
+    <div id="input-container">
+      <input
+        type="text"
+        id="text-field"
+        placeholder="Words go here etc."
+        name="text"
+        oninput="disableButton()"
+      />
+      <button
+        class="button"
+        id="mash-text"
+        type="button"
+        value="Fuck it"
+        onclick="typeLikeATwat()"
+        disabled
+      >
+        Ensmarten
       </button>
     </div>
 
-    <div class="text-history"></div>
-  </div>
-  <div id="background-fun">
-    <i class="bg-text">
-      <div style="font-size: 3.4em">&#9787;</div>
-      POINTLESS
-    </i>
-  </div>
-  <section class="modal hidden">
-    <h3>OBNOXIOUS FLASHING COLOURS WARNING</h3>
-    <div>
-      <p>
-        Probably don't press OK if you're sensitive to flashing/flickers lights
-      </p>
+    <div id="display-text-container">
+      <p id="display-text">This is just utterly pointless.</p>
+      <button class="button" id="copy-text" onclick="copyText()">
+        Copy text
+      </button>
     </div>
-    <div class="modal-buttons">
-      <button class="button" onclick="pressedOk()">OK</button>
-      <button class="button" onclick="goodBye()">LEAVE</button>
+
+    <div id="display-history">
+      <div id="history-title">
+        <h3 style="text-align: center">Past smart conversions</h3>
+        <button class="button" id="clear-btn" onclick="clearHistory()" disabled>
+          clear
+        </button>
+        <button
+          aria-label="Expand/Collapse history"
+          class="chevron-box"
+          onclick="expandHistory()"
+          disabled
+        >
+          <img
+            class="chevron-icon disabled"
+            src="/icons/chevron-icon.svg"
+            alt="toggle history chevron"
+          />
+        </button>
+      </div>
+
+      <div class="text-history"></div>
     </div>
-  </section>
+    <div id="background-fun">
+      <i class="bg-text">
+        <div style="font-size: 3.4em">&#9787;</div>
+        POINTLESS
+      </i>
+    </div>
+    <section class="modal hidden">
+      <h3>OBNOXIOUS FLASHING COLOURS WARNING</h3>
+      <div>
+        <p>
+          Probably don't press OK if you're sensitive to flashing/flickers
+          lights
+        </p>
+      </div>
+      <div class="modal-buttons">
+        <button class="button" onclick="pressedOk()">OK</button>
+        <button class="button" onclick="goodBye()">LEAVE</button>
+      </div>
+    </section>
 
-  <div class="overlay hidden"></div>
-</body>
-<script src="js/index.js" charset="utf-8" type="application/javascript"></script>
-
+    <div class="overlay hidden"></div>
+  </body>
+  <script
+    src="js/index.js"
+    charset="utf-8"
+    type="application/javascript"
+  ></script>
 </html>
